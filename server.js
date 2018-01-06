@@ -5,7 +5,7 @@ var connection = require("./config/connection.js");
 
 
 var app = express();
-var port = 3000;
+var PORT = process.env.PORT || 3000;
 
 app.use(express.static("public"));
 
@@ -22,6 +22,6 @@ var routes = require("./controllers/burgers_Controller.js");
 
 app.use("/", routes);
 
-app.listen(port, function() {
-  	console.log("App listening on port " + port);
+app.listen(PORT, function() {
+  	console.log("App listening on port " + PORT);
 });
